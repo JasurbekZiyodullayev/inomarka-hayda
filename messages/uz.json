@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "title": "Avto Ensiklopediya",
+    "subtitle": "Avtomobillar tarixi va ma'lumotlari"
+  },
+  "catalog": {
+    "title": "Avtomobillar Katalogi",
+    "subtitle": "Dunyo brendlarining to'liq tarixi va ma'lumotlari",
+    "filterBrand": "Brend bo'yicha",
+    "filterCountry": "Mamlakat bo'yicha",
+    "filterYear": "Yil bo'yicha",
+    "allBrands": "Barcha brendlar",
+    "allCountries": "Barcha mamlakatlar",
+    "allYears": "Barcha yillar",
+    "debutYear": "Birinchi chiqish",
+    "origin": "Kelib chiqishi",
+    "readMore": "Batafsil",
+    "noResults": "Hech narsa topilmadi"
+  }
+}

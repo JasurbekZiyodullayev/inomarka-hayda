@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "title": "Auto Encyclopedia",
+    "subtitle": "Automobile history and information"
+  },
+  "catalog": {
+    "title": "Car Catalog",
+    "subtitle": "Complete history and information about world brands",
+    "filterBrand": "By Brand",
+    "filterCountry": "By Country",
+    "filterYear": "By Year",
+    "allBrands": "All Brands",
+    "allCountries": "All Countries",
+    "allYears": "All Years",
+    "debutYear": "Debut Year",
+    "origin": "Origin",
+    "readMore": "Read More",
+    "noResults": "Nothing found"
+  }
+}
