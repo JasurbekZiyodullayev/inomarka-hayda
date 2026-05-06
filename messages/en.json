@@ -3,6 +3,20 @@
     "title": "Auto Encyclopedia",
     "subtitle": "Automobile history and information"
   },
+  "car": {
+    "back": "Back to Catalog",
+    "debut": "World Debut",
+    "country": "Origin",
+    "uzbekistanSince": "In Uzbekistan since",
+    "engine": "Engine",
+    "horsepower": "Horsepower",
+    "topSpeed": "Top Speed",
+    "weight": "Weight",
+    "seats": "Seats",
+    "generations": "Generation History",
+    "funFacts": "Fun Facts",
+    "notFound": "Car not found"
+  },
   "catalog": {
     "title": "Car Catalog",
     "subtitle": "Complete history and information about world brands",

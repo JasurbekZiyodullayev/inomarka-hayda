@@ -3,6 +3,20 @@
     "title": "Avto Ensiklopediya",
     "subtitle": "Avtomobillar tarixi va ma'lumotlari"
   },
+  "car": {
+    "back": "Katalogga qaytish",
+    "debut": "Birinchi chiqish",
+    "country": "Kelib chiqishi",
+    "uzbekistanSince": "O'zbekistonda",
+    "engine": "Dvigatel",
+    "horsepower": "Quvvat",
+    "topSpeed": "Max tezlik",
+    "weight": "Og'irlik",
+    "seats": "O'rindiqlar",
+    "generations": "Generatsiyalar tarixi",
+    "funFacts": "Qiziqarli faktlar",
+    "notFound": "Avtomobil topilmadi"
+  },
   "catalog": {
     "title": "Avtomobillar Katalogi",
     "subtitle": "Dunyo brendlarining to'liq tarixi va ma'lumotlari",

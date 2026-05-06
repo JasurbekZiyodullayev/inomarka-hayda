@@ -5,6 +5,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/Header";
+import CompareBar from "@/components/CompareBar";
+import { CompareProvider } from "@/context/CompareContext";
 import "../globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
@@ -33,8 +35,11 @@ export default async function LocaleLayout({
     <html lang={locale} className={geist.variable}>
       <body className="bg-[#f0f4f8] text-[#1a202c] min-h-screen antialiased">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
+          <CompareProvider>
+            <Header />
+            <main className="pb-20">{children}</main>
+            <CompareBar />
+          </CompareProvider>
         </NextIntlClientProvider>
       </body>
     </html>

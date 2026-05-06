@@ -183,19 +183,102 @@ UzAuto Motors tomonidan 2013-yildan boshlab ishlab chiqarilmoqda...
 ## 10. Birinchi bosqich (MVP)
 
 - [x] TZ yozildi
-- [ ] Next.js loyihasi sozlash
-- [ ] Tailwind, MDX, next-intl o'rnatish
-- [ ] Bosh sahifa (katalog) — dizayn
-- [ ] Select filter (brend, mamlakat, yil)
+- [x] Next.js loyihasi sozlash
+- [x] Tailwind, MDX, next-intl o'rnatish
+- [x] Bosh sahifa (katalog) — dizayn
+- [x] Select filter (brend, mamlakat, yil)
 - [ ] Model sahifasi — generatsiyalar timeline + qiziqarli faktlar
 - [ ] 5 ta model uchun MDX kontent (3 tilda)
 - [ ] Deploy (Vercel)
 
 ---
 
-## 11. Kelajak rejalar (keyingi bosqichlar)
+## 10.1 Solishtirish funksiyasi (2-bosqich)
 
-- Solishtirish (2 modelni solishtirish)
+### 10.1.1 Avtomobil tanlash
+- [ ] `Car` modeliga texnik spesifikatsiyalar qo'shish (`horsePower`, `topSpeed`, `engineCC`, `fuelConsumption`, `seats`, `doors`, `weight`)
+- [ ] `CompareContext` — React context, max 2 ta avtomobil slug ni saqlaydi
+- [ ] Har bir `CarCard` da "+" tugmasi — tanlash/bekor qilish
+- [ ] `CompareBar` — pastda floating panel: tanlangan mashinalar + "Solishtirish" tugmasi
+- [ ] Layout da `CompareProvider` va `CompareBar` ni ulash
+
+### 10.1.2 Solishtirish sahifasi `/compare`
+- [ ] Route: `/[locale]/compare?car1=slug1&car2=slug2`
+- [ ] Ikki avtomobil nomi va mamlakat bayrog'i — sarlavha
+- [ ] **Radar chart** (umumiy ko'rinish): Quvvat, Tezlik, Tejamkorlik, Yengillik, Dvigatel hajmi (0–100 normalizatsiya)
+- [ ] **Bar chart** (aniq qiymatlar): HP, km/h, cc, L/100km, kg — yon-yon taqqoslash
+- [ ] Spesifikatsiyalar jadvali (side-by-side)
+- [ ] "Katalogga qaytish" tugmasi
+- [ ] 3 tilda tarjima (`uz.json`, `ru.json`, `en.json`)
+- [ ] `recharts` kutubxonasini o'rnatish
+
+---
+
+## 11. Responsive dizayn
+
+Sayt barcha qurilmalarda to'g'ri ko'rinishi shart.
+
+### Breakpointlar (Tailwind CSS)
+
+| Nom | Kenglik | Qurilma |
+|-----|---------|---------|
+| default | < 640px | Mobil (telefon) |
+| `sm` | ≥ 640px | Katta telefon / kichik planshet |
+| `md` | ≥ 768px | Planshet |
+| `lg` | ≥ 1024px | Noutbuk |
+| `xl` | ≥ 1280px | Desktop |
+
+### Komponentlar bo'yicha talablar
+
+**Header:**
+- Mobilda: logo + til tugmalari bir qatorda sig'ishi kerak
+- Kichik ekranda til tugmalari `UZ / RU / EN` qisqartirilgan holda ko'rinadi
+
+**Katalog grid:**
+- Mobil (< 640px): 1 ustun
+- sm (≥ 640px): 2 ustun
+- lg (≥ 1024px): 3 ustun
+- xl (≥ 1280px): 4 ustun
+
+**Filter paneli:**
+- Mobilda: selectlar ustma-ust (vertical stack)
+- md va undan katta: bir qatorda (horizontal)
+
+**CarCard:**
+- Barcha o'lchamlarda bir xil tuzilma, faqat kenglik o'zgaradi
+- Rasm balandligi mobilda kamroq (`h-36` mobil, `h-44` desktop)
+
+**Model sahifasi (generatsiyalar timeline):**
+- Mobilda: vertikal chiziq, har bir generatsiya pastga ketadi
+- Desktop: kengaytirilgan ko'rinish
+
+**Solishtirish sahifasi `/compare`:**
+- Mobilda: kartalar ustma-ust, chartlar to'liq kenglikda
+- Jadval mobilda gorizontal scroll bilan
+- md va undan katta: kartalar yon-yon
+
+**CompareBar (floating):**
+- Mobilda: balandroq (2 qator), tanlangan mashinalar nomi qisqartirilgan
+- Desktop: 1 qatorda hamma narsa
+
+### Umumiy qoidalar
+- `min-width: 320px` — eng kichik qo'llab-quvvatlanadigan kenglik
+- Touch-friendly: tugmalar kamida `44×44px` touch target
+- Gorizontal scroll yo'q (faqat jadval ichida ruxsat)
+- Rasm optimizatsiyasi: `next/image` bilan `sizes` atributi to'g'ri sozlanishi
+
+### Tasklar
+- [ ] Header mobil ko'rinishini tekshirish va tuzatish
+- [ ] Filter panelini mobilda vertikal stack qilish
+- [ ] CarCard grid breakpointlarini tekshirish
+- [ ] CompareBar mobil ko'rinishi
+- [ ] Solishtirish sahifasi mobil layout
+- [ ] Barcha sahifalarni 320px, 375px, 768px, 1280px da test qilish
+
+---
+
+## 12. Kelajak rejalar (keyingi bosqichlar)
+
 - Foydalanuvchi izohlari
 - Admin panel (kontent qo'shish uchun)
 - Qo'shimcha tillar

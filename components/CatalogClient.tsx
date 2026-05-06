@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { Car, brands, countries, yearRanges } from "@/data/cars";
 import { Select, Button } from "@/components/ui";
 import CarCard from "./CarCard";
+import { useCompare } from "@/context/CompareContext";
 
 interface FilterValues {
   brand: string;
@@ -29,9 +29,10 @@ interface Props {
 }
 
 export default function CatalogClient({ cars, locale, t }: Props) {
-  const { register, watch, reset, formState } = useForm<FilterValues>({
+  const { control, watch, reset } = useForm<FilterValues>({
     defaultValues: { brand: "", country: "", yearRange: "" },
   });
+  const { toggle, isSelected, canAdd } = useCompare();
 
   const values = watch();
   const hasFilter = values.brand || values.country || values.yearRange;
@@ -49,20 +50,41 @@ export default function CatalogClient({ cars, locale, t }: Props) {
   return (
     <div>
       <form className="flex flex-wrap items-end gap-3 mb-8 bg-white border border-[#e2e8f0] rounded-2xl px-5 py-4">
-        <Select
-          {...register("brand")}
-          placeholder={t.filterBrand}
-          options={brands.map((b) => ({ value: b, label: b }))}
+        <Controller
+          control={control}
+          name="brand"
+          render={({ field }) => (
+            <Select
+              value={field.value}
+              onChange={field.onChange}
+              placeholder={t.filterBrand}
+              options={brands.map((b) => ({ value: b, label: b }))}
+            />
+          )}
         />
-        <Select
-          {...register("country")}
-          placeholder={t.filterCountry}
-          options={countries.map((c) => ({ value: c, label: c }))}
+        <Controller
+          control={control}
+          name="country"
+          render={({ field }) => (
+            <Select
+              value={field.value}
+              onChange={field.onChange}
+              placeholder={t.filterCountry}
+              options={countries.map((c) => ({ value: c, label: c }))}
+            />
+          )}
         />
-        <Select
-          {...register("yearRange")}
-          placeholder={t.filterYear}
-          options={yearRanges.map((r) => ({ value: r.label, label: r.label }))}
+        <Controller
+          control={control}
+          name="yearRange"
+          render={({ field }) => (
+            <Select
+              value={field.value}
+              onChange={field.onChange}
+              placeholder={t.filterYear}
+              options={yearRanges.map((r) => ({ value: r.label, label: r.label }))}
+            />
+          )}
         />
 
         {hasFilter && (
@@ -95,6 +117,9 @@ export default function CatalogClient({ cars, locale, t }: Props) {
               locale={locale}
               readMoreLabel={t.readMore}
               debutLabel={t.debutYear}
+              isInCompare={isSelected(car.slug)}
+              canAddToCompare={canAdd}
+              onCompareToggle={() => toggle(car.slug)}
             />
           ))}
         </div>
