@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -6,6 +7,42 @@ import { carDetails } from "@/data/carDetails";
 import CompareButton from "@/components/CompareButton";
 import CarImageCarousel from "@/components/CarImageCarousel";
 import ExpandableText from "@/components/ExpandableText";
+import { SITE_URL, carDetailSuffix, carAlternates, type Locale } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const car = cars.find((c) => c.slug === slug);
+  const detail = carDetails.find((d) => d.slug === slug);
+  if (!car || !detail) return {};
+
+  const suffix = carDetailSuffix[(locale as Locale) ?? "uz"] ?? carDetailSuffix.uz;
+  const title = `${car.brand} ${car.model} — ${suffix}`;
+  const description = detail.description.slice(0, 160);
+  const image = `${SITE_URL}${car.thumbnail}`;
+
+  return {
+    title,
+    description,
+    alternates: carAlternates(slug),
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/${locale}/cars/${slug}`,
+      images: [{ url: image, width: 1200, height: 630, alt: `${car.brand} ${car.model}` }],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 
 const countryFlags: Record<string, string> = {
   JP: "🇯🇵", DE: "🇩🇪", US: "🇺🇸", KR: "🇰🇷", BR: "🇧🇷",
@@ -31,8 +68,41 @@ export default async function CarDetailPage({
 
   const flag = countryFlags[car.countryCode] ?? "🌍";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    name: `${car.brand} ${car.model}`,
+    brand: { "@type": "Brand", name: car.brand },
+    description: detail.description.slice(0, 300),
+    image: `${SITE_URL}${car.thumbnail}`,
+    vehicleEngine: {
+      "@type": "EngineSpecification",
+      engineDisplacement: {
+        "@type": "QuantitativeValue",
+        value: car.specs.engineCC,
+        unitCode: "CMQ",
+      },
+      enginePower: {
+        "@type": "QuantitativeValue",
+        value: car.specs.horsePower,
+        unitCode: "BHP",
+      },
+    },
+    speed: {
+      "@type": "QuantitativeValue",
+      value: car.specs.topSpeed,
+      unitCode: "KMH",
+    },
+    seatingCapacity: car.specs.seats,
+    numberOfDoors: car.specs.doors,
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Back */}
       <Link
@@ -92,7 +162,7 @@ export default async function CarDetailPage({
         )}
         <div className="bg-white rounded-xl border border-[#e2e8f0] px-4 py-4">
           <p className="text-[11px] text-[#94a3b8] uppercase tracking-wider mb-1">{t("engine")}</p>
-          <p className="text-lg font-bold text-[#1a202c]">{car.specs.engineCC.toLocaleString()} <span className="text-sm font-normal text-[#94a3b8]">cc</span></p>
+          <p className="text-lg font-bold text-[#1a202c]">{car.specs.engineCC.toLocaleString("en-US")} <span className="text-sm font-normal text-[#94a3b8]">cc</span></p>
         </div>
         <div className="bg-white rounded-xl border border-[#e2e8f0] px-4 py-4">
           <p className="text-[11px] text-[#94a3b8] uppercase tracking-wider mb-1">{t("seats")}</p>

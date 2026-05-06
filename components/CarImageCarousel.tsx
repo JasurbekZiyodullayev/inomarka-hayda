@@ -14,11 +14,13 @@ export default function CarImageCarousel({ images, alt }: Props) {
 
   function prev(e: React.MouseEvent) {
     e.preventDefault();
+    e.stopPropagation();
     setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
   }
 
   function next(e: React.MouseEvent) {
     e.preventDefault();
+    e.stopPropagation();
     setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
   }
 
@@ -74,7 +76,7 @@ export default function CarImageCarousel({ images, alt }: Props) {
           {images.map((_, i) => (
             <button
               key={i}
-              onClick={(e) => { e.preventDefault(); setCurrent(i); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrent(i); }}
               className={`rounded-full transition-all ${
                 i === current
                   ? "w-4 h-1.5 bg-indigo-600"

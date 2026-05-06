@@ -49,7 +49,7 @@ export default function CatalogClient({ cars, locale, t }: Props) {
 
   return (
     <div>
-      <form className="flex flex-wrap items-end gap-3 mb-8 bg-white border border-[#e2e8f0] rounded-2xl px-5 py-4">
+      <form className="flex flex-col sm:flex-row sm:flex-wrap sm:items-end gap-3 mb-8 bg-white border border-[#e2e8f0] rounded-2xl px-5 py-4">
         <Controller
           control={control}
           name="brand"
@@ -59,6 +59,7 @@ export default function CatalogClient({ cars, locale, t }: Props) {
               onChange={field.onChange}
               placeholder={t.filterBrand}
               options={brands.map((b) => ({ value: b, label: b }))}
+              className="max-sm:w-full"
             />
           )}
         />
@@ -71,6 +72,7 @@ export default function CatalogClient({ cars, locale, t }: Props) {
               onChange={field.onChange}
               placeholder={t.filterCountry}
               options={countries.map((c) => ({ value: c, label: c }))}
+              className="max-sm:w-full"
             />
           )}
         />
@@ -83,6 +85,7 @@ export default function CatalogClient({ cars, locale, t }: Props) {
               onChange={field.onChange}
               placeholder={t.filterYear}
               options={yearRanges.map((r) => ({ value: r.label, label: r.label }))}
+              className="max-sm:w-full"
             />
           )}
         />

@@ -131,20 +131,25 @@ export default function CompareModal({ excludeSlug, onSelect, onClose }: Props) 
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {filtered.map((car) => (
-                <button
+                <div
                   key={car.slug}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => handleSelect(car)}
-                  className="text-left bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-4 hover:border-indigo-300 hover:bg-indigo-50 hover:shadow-sm transition-all group"
+                  onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handleSelect(car)}
+                  className="cursor-pointer text-left bg-[#f8fafc] border border-[#e2e8f0] rounded-xl overflow-hidden hover:border-indigo-300 hover:bg-indigo-50 hover:shadow-sm transition-all group"
                 >
-                  <div className="relative h-16 rounded-lg overflow-hidden mb-3">
+                  <div className="relative h-20 overflow-hidden">
                     <CarImageCarousel images={car.images} alt={`${car.brand} ${car.model}`} />
                   </div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[#94a3b8] mb-0.5">{car.brand}</p>
-                  <p className="text-sm font-bold text-[#1a202c] group-hover:text-indigo-700 transition-colors leading-tight">{car.model}</p>
-                  <p className="text-[11px] text-[#94a3b8] mt-1">
-                    {countryFlags[car.countryCode] ?? "🌍"} {car.worldDebut}
-                  </p>
-                </button>
+                  <div className="px-3 pt-2.5 pb-3">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#94a3b8] mb-0.5">{car.brand}</p>
+                    <p className="text-sm font-bold text-[#1a202c] group-hover:text-indigo-700 transition-colors leading-tight">{car.model}</p>
+                    <p className="text-[11px] text-[#94a3b8] mt-1">
+                      {countryFlags[car.countryCode] ?? "🌍"} {car.worldDebut}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           )}

@@ -2,15 +2,19 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function Header() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   function switchLocale(newLocale: string) {
-    router.replace(pathname, { locale: newLocale });
+    const qs = searchParams.toString();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    router.replace((qs ? `${pathname}?${qs}` : pathname) as any, { locale: newLocale });
   }
 
   return (
@@ -22,7 +26,7 @@ export default function Header() {
           </div>
           <div>
             <p className="text-[#1a202c] font-semibold text-[15px] leading-tight">{t("title")}</p>
-            <p className="text-[#94a3b8] text-xs">{t("subtitle")}</p>
+            <p className="hidden sm:block text-[#94a3b8] text-xs">{t("subtitle")}</p>
           </div>
         </Link>
 

@@ -1,8 +1,35 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { cars } from "@/data/cars";
 import ComparisonClient from "@/components/ComparisonClient";
 import ComparePageHeader from "@/components/ComparePageHeader";
+import { SITE_URL } from "@/lib/seo";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ car1?: string; car2?: string }>;
+}): Promise<Metadata> {
+  const { car1: slug1, car2: slug2 } = await searchParams;
+  const car1 = cars.find((c) => c.slug === slug1);
+  const car2 = cars.find((c) => c.slug === slug2);
+  if (!car1 || !car2) return {};
+
+  const title = `${car1.brand} ${car1.model} vs ${car2.brand} ${car2.model} — Solishtirish`;
+  const description = `${car1.brand} ${car1.model} va ${car2.brand} ${car2.model} ni texnik ko'rsatkichlar bo'yicha solishtiring.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/uz/compare?car1=${slug1}&car2=${slug2}`,
+    },
+    robots: { index: false },
+  };
+}
 
 export default async function ComparePage({
   searchParams,

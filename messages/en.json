@@ -1,4 +1,12 @@
 {
+  "footer": {
+    "description": "A complete encyclopedia of world automobiles — history, generations and technical specifications.",
+    "navigation": "Navigation",
+    "catalog": "Catalog",
+    "brands": "Brands",
+    "contact": "Contact",
+    "copyright": "All rights reserved"
+  },
   "nav": {
     "title": "Auto Encyclopedia",
     "subtitle": "Automobile history and information"

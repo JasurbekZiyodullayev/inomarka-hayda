@@ -478,6 +478,166 @@ export const carDetails: CarDetail[] = [
     ],
   },
   {
+    slug: "chevrolet-spark",
+    uzbekistanSince: 2005,
+    description:
+      "Chevrolet Spark — O'zbekistonda eng arzon va keng tarqalgan kichik avtomobillardan biri. Avval 'Matiz' nomi bilan mashhur bo'lgan bu model shaharda harakatlanish va parklanish qulayligi bilan ajralib turadi. Tejamkor dvigateli va yengil vazni uni shahar yo'llarining ideal hamrohi qilgan.",
+    generations: [
+      { year: 1998, title: "I avlod (Daewoo Matiz)", changes: "Daewoo Matiz nomi bilan chiqdi. Suzuki Alto platformasiga asoslangan, 0.8L dvigatel, juda yengil va arzon." },
+      { year: 2005, title: "II avlod (M200)", changes: "Birinchi rasmiy Chevrolet Spark brendi, 1.0L dvigatel, yangilangan dizayn, xavfsizlik yaxshilandi." },
+      { year: 2010, title: "III avlod (M300)", changes: "Tubdan yangi dizayn, kengroq salon, 1.0L va 1.2L dvigatel opsiyalari, ESP qo'shildi." },
+      { year: 2016, title: "IV avlod (M400)", changes: "Zamonaviy kuzov, Apple CarPlay, 4 yulduzli xavfsizlik reytingi, yaxshilangan NVH izolatsiyasi." },
+    ],
+    funFacts: [
+      "O'zbekistonda avval 'Matiz' nomi bilan mashhur bo'lib, bu nom hali ham kichik avtomobillarning umumiy nomi sifatida ishlatiladi.",
+      "Spark dunyodagi eng kichik va eng yengil Chevrolet modeli hisoblanadi.",
+      "Shaharda parklanish osonligi tufayli ayollar orasida eng ommabop avtomobil.",
+      "O'zbekistonda Spark ning qayta sotish narxi juda tez tushganligi bilan ham tanilgan.",
+    ],
+  },
+  {
+    slug: "chevrolet-nexia-3",
+    uzbekistanSince: 2016,
+    description:
+      "Chevrolet Nexia 3 — O'zbekiston bozori uchun maxsus moslashtirilgan kompakt sedan. UzAuto Motors tomonidan ishlab chiqarilgan bu model arzon narxi, ishonchli dvigateli va qulay saloni bilan millionlab o'zbek xonadonining birinchi tanlovi bo'lib kelmoqda.",
+    generations: [
+      { year: 2016, title: "I avlod", changes: "UzAuto Motors da ishlab chiqarish boshlandi. Chevrolet Aveo platformasi, 1.5L SOHC dvigatel, 5-pog'onali mexanik KPP." },
+      { year: 2019, title: "Yangilash (I)", changes: "Multimedia tizimi yangilandi, Android Auto qo'shildi, ichki bezak yaxshilandi." },
+      { year: 2022, title: "Yangilash (II)", changes: "LED kunduzgi yorug'liklar, yangi rang palitrasi, yaxshilangan ovoz izolatsiyasi." },
+    ],
+    funFacts: [
+      "'Nexia' nomi O'zbekistonda ikonik bo'lib, har qanday kichik sedanni 'Nexia' deb atash odati paydo bo'lgan.",
+      "UzAuto Motors Nexia 3 ni yiliga 100,000 dan ortiq miqdorda ishlab chiqaradi.",
+      "O'zbekistonda eng ko'p sotiladigan avtomobillar ro'yxatida doimo yuqori o'rinda turadi.",
+      "Taxi va yuk tashish uchun ham keng qo'llaniladi — mustahkam konstruksiyasi tufayli.",
+    ],
+  },
+  {
+    slug: "chevrolet-lacetti",
+    uzbekistanSince: 2009,
+    description:
+      "Chevrolet Lacetti — Janubiy Koreyada Daewoo tomonidan ishlab chiqilgan, O'zbekistonda ko'p yillar davomida sevimli oilaviy sedan. Keng salon, ishonchli 1.6L dvigateli va qulay narxi bilan keng omma orasida mashhurligini saqlab kelmoqda.",
+    generations: [
+      { year: 2004, title: "I avlod (J200)", changes: "Daewoo Lacetti nomi bilan global bozorga chiqdi. 1.4L, 1.6L va 1.8L dvigatel variantlari, sedan va hatchback." },
+      { year: 2009, title: "O'zbekiston versiyasi", changes: "UzAuto Motors da ishlab chiqarish boshlandi. Mahalliy yo'llarga moslashtirilgan suspenziya." },
+      { year: 2014, title: "Facelift", changes: "Yangilangan old qism, yangi disk g'ildiraklari, ichki bezak yaxshilandi." },
+      { year: 2019, title: "Yakuniy yangilash", changes: "Multimedia tizimi modernizatsiya qilindi, xavfsizlik sensori qo'shildi." },
+    ],
+    funFacts: [
+      "Lacetti nomi lotincha 'lac' (ko'l) so'zidan kelib chiqqan — go'zallik va tiniqlik ramzi.",
+      "O'zbekistonda taksi sifatida eng ko'p foydalanilgan avtomobillardan biri.",
+      "Sedan va hatchback variantlari mavjud bo'lib, O'zbekistonda sedan ko'proq mashhur.",
+      "GM ning J-platforma asosida qurilgan — Opel Astra J bilan umumiy texnik yechimlar.",
+    ],
+  },
+  {
+    slug: "chevrolet-malibu",
+    uzbekistanSince: 2013,
+    description:
+      "Chevrolet Malibu — Amerika brendining O'zbekistonga olib kelgan premium o'rta sinf sedani. Keng va qulay saloni, kuchli dvigateli hamda zamonaviy texnologiyalari bilan biznes vakillari orasida e'tiborli mavqega ega.",
+    generations: [
+      { year: 1964, title: "I avlod (A-body)", changes: "Chevelle Malibu nomi bilan chiqdi — klassik Amerika muscle car davri." },
+      { year: 1978, title: "IV avlod", changes: "Iqtisodiy inqiroz ta'sirida kichiklashtirildi, tejamkor dvigatellar." },
+      { year: 1997, title: "V avlod (qayta tiklash)", changes: "Zamonaviy Malibu nomi qaytdi, front-wheel drive platforma." },
+      { year: 2008, title: "VII avlod", changes: "Tubdan yangi dizayn, keng salon, 2.4L Ecotec dvigatel." },
+      { year: 2013, title: "VIII avlod (O'zbekistonga keldi)", changes: "Yangi platforma, 2.0L turbodvigatel opsiyasi, MyLink multimedia." },
+      { year: 2016, title: "IX avlod", changes: "Engillashtirildi, Teen Driver xavfsizlik tizimi, 8 ta havo yostiq." },
+    ],
+    funFacts: [
+      "'Malibu' nomi Kaliforniyadagi mashhur plyaj shaharchasidan olingan.",
+      "O'zbekistonda Malibu biznes sinfi va davlat xizmatchilarining avtomobili sifatida tanilgan.",
+      "Chevrolet Malibu AQShda 1964-yildan buyon boshqa nomi bilan ishlab chiqarilgan eng uzun umrli modellardan biri.",
+      "2013-yilgi avlod O'zbekistonda juda mashhur bo'lib, ko'chada eng ko'p uchraydigan premium sedanlardan biri.",
+    ],
+  },
+  {
+    slug: "chevrolet-tracker",
+    uzbekistanSince: 2014,
+    description:
+      "Chevrolet Tracker — kompakt crossover segmentida O'zbekiston bozorida o'rnini mustahkam egallagan model. Turbodvigateli, qulay saloni va shaharda ham, yo'ldan tashqarida ham bemalol harakat qilish imkoniyati bilan mashhur.",
+    generations: [
+      { year: 1989, title: "I avlod (Geo Tracker)", changes: "Off-road SUV sifatida boshlandi, Suzuki Vitara bilan umumiy platforma, to'liq yuldan tashqari imkoniyatlar." },
+      { year: 1999, title: "II avlod", changes: "Kengaytirilgan salon, 4-eshikli variant, yaxshilangan interior." },
+      { year: 2013, title: "III avlod (kompakt crossover)", changes: "Tubdan yangi — endi shahar crossover'i. 1.4L turbodvigatel, front-wheel drive asosiy variant." },
+      { year: 2019, title: "IV avlod", changes: "Yangi platforma, 1.2T va 1.5T dvigatellar, CVT karobka, zamonaviy xavfsizlik tizimi." },
+    ],
+    funFacts: [
+      "'Tracker' inglizcha 'kuzatuvchi' ma'nosini anglatadi.",
+      "2013-yilgi avlod off-road SUV dan shahar crossover'iga to'liq o'tishni anglatadi.",
+      "O'zbekistonda 1.4T turbodvigatel versiyasi eng ommabop — tejamkor va quvvatli.",
+      "Tracker O'zbekistonda yoshlar va faol hayot kechiruvchilar orasida mashhur.",
+    ],
+  },
+  {
+    slug: "chevrolet-captiva",
+    uzbekistanSince: 2007,
+    description:
+      "Chevrolet Captiva — o'rta o'lchamli SUV segmentida O'zbekistonda keng tarqalgan model. 7 o'rindiqli saloni, kuchli 2.4L dvigateli va yuqori yul ko'tarish imkoniyati bilan katta oilalar uchun ideal tanlov hisoblanadi.",
+    generations: [
+      { year: 2006, title: "I avlod (C100)", changes: "Daewoo Winstorm nomi bilan ham chiqdi. GM ning Theta platformasi, 2.0L turbodiezel va 2.4L benzin." },
+      { year: 2011, title: "Facelift", changes: "Yangilangan old faralar va bamper, yaxshilangan ichki bezak, yangi multimedia." },
+      { year: 2016, title: "II avlod (C140)", changes: "Yangi platforma, yaxshilangan aerodinamika, kuchli xavfsizlik tizimi." },
+    ],
+    funFacts: [
+      "Captiva Opel Antara bilan bitta platforma va zavodda ishlab chiqarilgan.",
+      "Janubiy Koreyaning Incheon zavodida ishlab chiqarilgan — GM Korea mahsuloti.",
+      "7 o'rindiqli versiyasi O'zbekistonda eng mashhur — katta oilalar uchun qulay.",
+      "'Captiva' nomi ispancha 'asirga olingan' ma'nosini anglatadi — yulning sehriga asir bo'lish.",
+    ],
+  },
+  {
+    slug: "chevrolet-equinox",
+    uzbekistanSince: 2018,
+    description:
+      "Chevrolet Equinox — zamonaviy turbodvigatel texnologiyasi va keng jihozlangan saloni bilan O'zbekiston crossover bozorida yangi o'ringa ega bo'lgan model. Tejamkor 1.5T dvigateli va ilg'or xavfsizlik tizimlari uni ajratib turadi.",
+    generations: [
+      { year: 2004, title: "I avlod", changes: "Birinchi Equinox — Saturn Vue platformasi, 3.4L V6 dvigatel, AWD opsiya." },
+      { year: 2010, title: "II avlod", changes: "Kengaytirilgan salon, 4-silindrli dvigatel qo'shildi, yoqilg'i sarfi kamaydi." },
+      { year: 2018, title: "III avlod (O'zbekistonga keldi)", changes: "Engil platforma, 1.5T va 2.0T turbodvigatel, Wi-Fi hotspot, 8 ta havo yostiq standart." },
+    ],
+    funFacts: [
+      "'Equinox' astronomik atama — Yer quyosh atrofida aylanishida kun va tunning tenglanish nuqtasi.",
+      "III avlod o'zidan oldingi versiyaga nisbatan 180 kg yengilroq — yoqilg'i sarfini kamaytiradi.",
+      "O'zbekistonda 2018-yildan boshlab sotila boshlagan yangi avlod crossover.",
+      "1.5T turbodvigateli 170 HP bersa-da, yoqilg'i sarfi 2.0L naturally aspirated ga tenglashadi.",
+    ],
+  },
+  {
+    slug: "chevrolet-damas",
+    uzbekistanSince: 1996,
+    description:
+      "Chevrolet Damas — O'zbekistonda eng ikonik va ko'p ishlatiladigan mikrofurgon. Bozorlar, dehqon xo'jaliklari va kichik biznes uchun ishonchli yordamchi sifatida 30 yildan ortiq xizmat qilib kelmoqda. 'Damas' so'zi o'zbek tilida mikrofurgonning umumiy nomi bo'lib ketgan.",
+    generations: [
+      { year: 1991, title: "I avlod (Daewoo Damas)", changes: "Suzuki Every litsenziyasi asosida Daewoo tomonidan ishlab chiqarildi. 0.8L dvigatel, 8 o'rindiq." },
+      { year: 1996, title: "O'zbekistonga keldi", changes: "UzDaewoo (keyinchalik UzAuto Motors) tomonidan O'zbekistonda ishlab chiqarish boshlandi." },
+      { year: 2013, title: "Chevrolet nomi ostida", changes: "UzAuto Motors Chevrolet brendi ostida chiqara boshladi. Texnik jihatlari asosan o'zgarmadi." },
+      { year: 2019, title: "Yangilash", changes: "Xavfsizlik jihozlari yaxshilandi, yangi rang variantlari qo'shildi." },
+    ],
+    funFacts: [
+      "O'zbekistonda 'Damas' so'zi har qanday kichik mikrofurgonning umumiy nomi bo'lib qolgan.",
+      "8 o'rindiqli versiyasi shahar marshrutkasi sifatida keng ishlatiladi.",
+      "Suzuki Every ning litsenzion ishlab chiqarilishi — original Yaponiya dizayni.",
+      "O'zbekiston bozorlarida, qishloqlarda va xizmat sohasida eng ko'p uchraydigan avtomobil.",
+    ],
+  },
+  {
+    slug: "chevrolet-labo",
+    uzbekistanSince: 1996,
+    description:
+      "Chevrolet Labo — O'zbekistonda ishlab chiqariladigan kichik yuk mashinasi. Qishloq joylarda, bozorlar atrofida va shahar chekkalarida yuk tashish uchun sodiq yordamchi sifatida tanilgan. Damas bilan birgalikda UzAuto Motors ning eng kichik va eng arzon modellari hisoblanadi.",
+    generations: [
+      { year: 1991, title: "I avlod (Daewoo Labo)", changes: "Suzuki ST90 litsenziyasi asosida ishlab chiqarildi. 0.8L dvigatel, 2 o'rindiq, kichik yuk kuzovi." },
+      { year: 1996, title: "O'zbekistonga keldi", changes: "UzDaewoo tomonidan O'zbekistonda ishlab chiqarish boshlandi." },
+      { year: 2013, title: "Chevrolet nomi ostida", changes: "UzAuto Motors Chevrolet brendi bilan chiqara boshladi." },
+    ],
+    funFacts: [
+      "Labo O'zbekistondagi eng yengilvaznli yuk mashinalaridan biri — atigi 720 kg.",
+      "Qishloq xo'jaligida sabzavot va meva tashish uchun ideal — tor yo'llarda ham bemalol o'tadi.",
+      "Damas bilan bitta zavod va bitta dvigatelni baham ko'radi.",
+      "O'zbekistonda 'Labo' so'zi kichik yuk mashinasining umumiy nomi bo'lib qolgan.",
+    ],
+  },
+  {
     slug: "volkswagen-golf",
     uzbekistanSince: undefined,
     description:

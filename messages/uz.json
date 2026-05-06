@@ -1,4 +1,12 @@
 {
+  "footer": {
+    "description": "Dunyo avtomobillari haqida to'liq ensiklopediya — tarixi, generatsiyalari va texnik ma'lumotlari.",
+    "navigation": "Navigatsiya",
+    "catalog": "Katalog",
+    "brands": "Brendlar",
+    "contact": "Bog'lanish",
+    "copyright": "Barcha huquqlar himoyalangan"
+  },
   "nav": {
     "title": "Avto Ensiklopediya",
     "subtitle": "Avtomobillar tarixi va ma'lumotlari"

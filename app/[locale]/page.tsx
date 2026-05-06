@@ -1,6 +1,28 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { cars } from "@/data/cars";
 import CatalogClient from "@/components/CatalogClient";
+import BrandMarquee from "@/components/BrandMarquee";
+import { catalogMeta, catalogAlternates, type Locale } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const meta = catalogMeta[(locale as Locale) ?? "uz"] ?? catalogMeta.uz;
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: catalogAlternates(locale),
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: catalogAlternates(locale).canonical,
+    },
+  };
+}
 
 export default async function HomePage({
   params,
@@ -35,6 +57,7 @@ export default async function HomePage({
         <div className="mt-5 w-12 h-[2px] bg-indigo-500 rounded-full" />
       </div>
 
+      <BrandMarquee />
       <CatalogClient cars={cars} locale={locale} t={translations} />
     </div>
   );
